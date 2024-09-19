@@ -80,7 +80,8 @@
     /* Change to desired background color */
     border: 1px solid $pastel-blue;
     /* Optional: add border */
-    color: $white;
+    // color: $white;
+    color: $marine-blue;
 
     @include respond-to(small) {
         color: $marine-blue;
