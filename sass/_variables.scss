@@ -1,0 +1,36 @@
+// theme colors
+// Primary Colors
+$marine-blue: hsl(213, 96%, 18%) !default;
+$purplish-blue: hsl(243, 100%, 62%) !default;
+$pastel-blue: hsl(228, 100%, 84%) !default;
+$light-blue: hsl(206, 94%, 87%) !default;
+$strawberry-red: hsl(354, 84%, 57%) !default;
+
+// Neutral Colors
+$cool-gray: hsl(231, 11%, 63%) !default;
+$light-gray: hsl(229, 24%, 87%) !default;
+$magnolia: hsl(217, 100%, 97%) !default;
+$alabaster: hsl(231, 100%, 99%) !default;
+$white: hsl(0, 0%, 100%) !default;
+
+// spacing
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+
+// borders
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1) !default;
+
+// font sizes
+$base-font-size: 16px !default;
+$font-size-sm: $base-font-size * 0.75 !default;
+$font-size-md: $base-font-size * 0.93 !default;
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-xl: $base-font-size * 2 !default;
+$font-size-xxl: $base-font-size * 3 !default;
+
+// width
+$base-width: 100%;

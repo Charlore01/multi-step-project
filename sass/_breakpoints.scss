@@ -1,0 +1,87 @@
+@use "sass:math";
+
+// // breakpoint.scss
+// @use './components/sidebar'; // Import sidebar styles if needed
+// Remove duplicate mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media only screen and (max-width: 1025px) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+// Example fix for sidebar
+@include respond-to(small) {
+  .side-bar {
+    position: relative;
+    width: 10%; // Use relative units for better mobile support
+    height: auto;
+    left: 0;
+    top: 0;
+    background-size: contain;
+  }
+}
+
+@include respond-to(medium) {
+  .side-bar {
+    width: 100%; // Adjust width for tablet devices
+    height: auto;
+  }
+}
+
+@include respond-to(large) {
+  .side-bar {
+    width: 90%;
+    height: auto;
+  }
+}
+
+// Mixin for media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// Mobile form styling
+.form-container {
+  @include respond-to(small) {
+    padding: 1.5rem;
+    // margin: 0 1rem;
+  }
+}
+
+// Text and spacing
+h2 {
+  @include respond-to(small) {
+    font-size: 1.25rem;
+  }
+}
+
+// Input fields
+input[type="text"],
+input[type="email"] {
+  @include respond-to(small) {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+}
+
+// Button
+button.next-btn {
+  @include respond-to(small) {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+}

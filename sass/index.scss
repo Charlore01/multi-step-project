@@ -1,0 +1,23 @@
+// variables & functions
+@import 'variables';
+
+// base & layout
+@import 'base';
+@import 'breakpoints';
+@import './grid';
+
+// colors
+@import "colors";
+
+// components (button, card, navbar etc)
+@import './components/sidebar';
+@import './components/form';
+@import './components/planCard';
+@import './components/toggleBtn';
+@import './components/addOn';
+@import './components/summary';
+@import './components/thankyou.scss';
+
+
+// utilities (margin, padding, opacity, etc)
+@import 'utilities';

@@ -1,0 +1,163 @@
+.form-container {
+  width: 1200px;
+
+
+  form {
+    margin-left: 300px;
+
+    @include respond-to(small) {
+      margin-left: 3%;
+    }
+
+    p {
+      @include respond-to(small) {
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  input {
+    width: 200px;
+    border: 1px solid $cool-gray;
+    transition: width 2s ease, box-shadow 2s ease, border 0.2s ease; // Smooth transition effect
+
+    &:focus {
+      width: 300px;
+      border-color: $purplish-blue;
+      outline: none;
+      box-shadow: 2px 2px 8px $purplish-blue; // Shadow effect on hover
+    }
+  }
+
+  button {
+    width: 120px;
+    margin-left: 50%;
+    padding: 10px 20px;
+    border: 2px solid $marine-blue; // Initial border color
+    background: linear-gradient(135deg, $marine-blue, $marine-blue); // Starting gradient background
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px; // Rounded button corners
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; // Prevents hover effect overflow
+    transition: all 0.4s ease-in-out; // Smooth transition for hover effects
+
+
+    @include respond-to(small) {
+      margin-top: -10px;
+      width: 125px;
+    }
+
+    // Hover effect
+    &:hover {
+      color: #000; // Text color change on hover
+      background: $marine-blue; // Background changes to marine-blue on hover
+      box-shadow: 0 0 20px $marine-blue, 0 0 40px $light-blue, 0 0 60px $marine-blue; // Glowing shadow effect
+    }
+
+    // Animated background gradient effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 300%;
+      height: 200%;
+      color: #fff;
+      background: linear-gradient(45deg, $pastel-blue, $light-blue, $marine-blue, $white);
+      z-index: -1;
+      transition: all 0.4s ease-in-out;
+      transform: rotate(45deg); // Angle of the gradient background
+    }
+
+    // Animated gradient flow on hover
+    &:hover::before {
+      left: 0; // Moves the gradient effect to the center
+      top: 0; // Moves the gradient effect to the center
+      width: 300%; // Expands the gradient effect
+      height: 300%; // Expands the gradient effect
+      transform: rotate(0deg); // Removes the initial rotation
+    }
+
+    // Text and border effects on hover
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0; // Makes sure the inset spans all corners
+      border: 2px solid $marine-blue; // Border color change on hover
+      transform: scale(1.1); // Slight zoom of border
+      opacity: 0; // Starts hidden
+      transition: all 0.4s ease-in-out; // Smooth transition for hover effects
+    }
+
+    // Glowing border effect on hover
+    &:hover::after {
+      transform: scale(1); // Scales border back to normal size
+      opacity: 1; // Makes border fully visible
+    }
+
+    z-index: 1; // Ensures text stays above pseudo-elements
+  }
+
+}
+
+/* Error Message Styling */
+.error-msg {
+  color: red;
+  display: none;
+  /* Initially hidden */
+  font-size: 0.875rem;
+  margin-top: 4px;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// ANOTHER BUTTON HOVER EFFECT
+// transition: background-color 0.3s ease, transform 0.3s ease; // Smooth transition for hover effects
+
+// &:hover {
+//   background-color: lighten($marine-blue, 10%); // Lighten color on hover
+//   transform: scale(1.02); // Slight zoom effect
+// }
+
+// // Ripple effect using pseudo-element
+// &::after {
+//   content: '';
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   background: rgba(255, 255, 255, 0.3); // White ripple color with transparency
+//   opacity: 0; // Start hidden
+//   transition: opacity 0.6s, transform 0.6s; // Smooth transition for ripple effect
+//   transform: scale(0); // Start with no scale
+// }
+
+// &:hover::after {
+//   opacity: 1; // Make ripple visible
+//   transform: scale(4); // Scale the ripple effect
+// }

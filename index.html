@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- animate cdn  -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+  <script defer src="./js/validation.js"></script>
+  <script defer src="./js/sideNav/ani.js"></script>
+  <script defer src="./js/button.js"></script>
+  <script defer src="./js/plan.js"></script>
+  <script defer src="./js/addOns.js"></script>
+  <script defer src="./js/summary.js/mainSummary.js"></script>
+  <script defer src="./js/summary.js/formSummary.js"></script>
+  <script defer src="./js/summary.js/planSummary.js"></script>
+  <script defer src="./js/summary.js/addonSummary.js"></script>
+  <script defer src=".js./js/summary.js/calculation.js"></script>
+  <script defer src="./js/summary.js/update.js"></script>
+  <script defer src="./js/sideNav/ani.js"></script>
+  <script defer src="./js/thankyou.js"></script>
+  <script defer src="./js/sideNav/stepNav.js"></script>
+
+  <title>Multi-Step Form</title>
+</head>
+
+<body class="bg-lightblue text-coolgray font-md">
+  <div class="container p-5 pb-5  display-f jc-center br-lg bg-white box-shadow">
+
+    <!-- Sidebar Start -->
+    <div
+      class="side-bar col-12-xs col-3-lg  animate__animated animate__zoomInLeft animate__delay-4s display-f text-white flex-column pt-2 pb-5 pl-2 pr-5 ">
+
+      <div class="step-container">
+        <div class="step active display-f jc-flex-start pl-0 pb-2 jc-left cursor-pointer">
+          <span class="step-number font-md br-lg display-f jc-center mr-1 align-items-center ">1</span>
+          <div class="step-text ">
+            <span class="font-sm text-coolgray m-0">STEP 1</span>
+            <h4 class=" font-md m-0">YOUR INFO</h4>
+          </div>
+        </div>
+        <div class="step display-f jc-left pl-0 pb-2 cursor-pointer">
+          <span class="step-number second-step font-md br-lg display-f mr-1 jc-center align-items-center">2</span>
+          <div class="step-text">
+            <p class="font-sm text-coolgray m-0">STEP 2</p>
+            <h4 class="font-md  m-0">SELECT PLAN</h4>
+          </div>
+        </div>
+        <div class="step display-f jc-left pb-2 cursor-pointer">
+          <span class="step-number font-md br-lg mr-1 display-f jc-center align-items-center">3</span>
+          <div class="step-text">
+            <p class="font-sm text-coolgray m-0">STEP 3</p>
+            <h4 class="font-md m-0">ADD-ONS</h4>
+          </div>
+        </div>
+        <div class="step display-f jc-left pl-0 pb-2 cursor-pointer">
+          <span class="step-number font-md br-lg mr-1 display-f jc-center align-items-center">4</span>
+          <div class="step-text">
+            <p class="font-sm text-coolgray m-0">STEP 4</p>
+            <h4 class="font-md m-0">SUMMARY</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Sidebar End -->
+
+   <!-- Form Start -->
+<div class="form-container col-12-xs col-9-lg display-f flex-column position-fix flex-1 bg-white" id="personal-info">
+  <form class="display-b ml-5 flex-column grid" id="user-form">
+    <h2 class="font-lg ml-0 pt-0 pb-1 text-marine-blue">Personal Info</h2>
+    <p class="text-coolgray pb-3">Please provide your name, email address, and phone number.</p>
+
+    <!-- Name input field -->
+    <div class="col-12-xs col-6-md mb-2">
+      <label for="name" class="label-name font-md text-marine-blue">Name</label>
+      <!-- Error message -->
+      <span id="name-error" class="error-msg font-sm text-red display-n">Invalid name (letters, spaces, and hyphen allowed)</span>
+      <input type="text" id="name" placeholder="e.g., Vanessa Mint" required
+        class="p-1 col-12-xs animate__animated animate__lightSpeedInLeft display-b mb-2 br-sm">
+    </div>
+
+    <!-- Email input field -->
+    <div class="col-12-xs col-6-md ">
+      <label for="email" class="font-md display-b text-marine-blue">Email Address</label>
+      <!-- Error message -->
+      <span id="email-error" class="error-msg font-sm text-red display-n">Invalid email format</span>
+      <input type="email" id="email" placeholder="e.g., vanessamint@example.com" required
+        class="p-1 col-12-xs animate__animated animate__lightSpeedInLeft animate__delay-2s mb-2 border-coolgray br-sm">
+    </div>
+
+    <!-- Phone input field -->
+    <div class="col-12-xs col-6-md mb-2">
+      <label for="phone" class="font-md display-b text-marine-blue">Phone Number</label>
+      <!-- Error message -->
+      <span id="phone-error" class="error-msg font-sm text-red display-n">Invalid phone number (digits, spaces, and "+" allowed)</span>
+      <input type="text" id="phone" placeholder="e.g., +1 234 567 890" required
+        class="p-1 col-12-xs animate__animated animate__lightSpeedInLeft animate__delay-3s mb-2 display-b border-red br-sm">
+    </div>
+
+    <!-- Next button -->
+    <div class="col-12-xs col-4-md">
+      <button class="next-btn col-12-xs mt-3 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+        type="button">Next Step</button>
+    </div>
+  </form>
+</div>
+<!-- Form End -->
+
+
+
+
+    <!-- plan start  -->
+    <div class="select-plan-container display-n " id="select-plan">
+      <div class="plan-header display-b mb-2 text-marine-blue">
+        <h2 class="pb-1">Select your plan</h2>
+        <p class="text-coolgray pb-2">You have the option of monthly or yearly billing.</p>
+      </div>
+
+      <div class="plan-options flex-wrap display-f justify-space-between">
+        <div class="plan-option disabled col-12-xs col-8-md col-3-lg bg-white br-sm pt-1 pl-2 pr-4 shadow-sm">
+          <div class="plan-icon pb-3">
+            <img
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%3E%3Cg%20fill='none'%20fill-rule='evenodd'%3E%3Ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%23FFAF7E'/%3E%3Cpath%20fill='%23FFF'%20fill-rule='nonzero'%20d='M24.995%2018.005h-3.998v5.998h-2v-5.998H15a1%201%200%200%200-1%201V29a1%201%200%200%200%201%201h9.995a1%201%200%200%200%201-1v-9.995a1%201%200%200%200-1-1Zm-5.997%208.996h-2v-1.999h2v2Zm2-11.175a2.999%202.999%200%201%200-2%200v2.18h2v-2.18Z'/%3E%3C/g%3E%3C/svg%3E"
+              alt="SVG Icon">
+          </div>
+          <div class="plan-details">
+            <h3 class="plan-type text-marine-blue mb-1">Arcade</h3>
+            <p class="price pb-1">$90/yr</p>
+            <p class="text-marine-blue ">2 months free</p>
+          </div>
+        </div>
+
+        <div
+          class="plan-option disabled active col-12-xs col-6-md ml-1 col-3-lg bg-light-blue br-sm pt-1 pl-2 pr-4  shadow-sm">
+          <div class="plan-icon pb-3">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><g fill='none' fill-rule='evenodd'><circle cx='20' cy='20' r='20' fill='%23F9818E'/><path fill='%23FFF' fill-rule='nonzero' d='M25.057 15H14.944C12.212 15 10 17.03 10 19.885c0 2.857 2.212 4.936 4.944 4.936h10.113c2.733 0 4.943-2.08 4.943-4.936S27.79 15 25.057 15ZM17.5 20.388c0 .12-.108.237-.234.237h-1.552v1.569c0 .126-.138.217-.259.217H14.5c-.118 0-.213-.086-.213-.203v-1.583h-1.569c-.126 0-.217-.139-.217-.26v-.956c0-.117.086-.213.202-.213h1.584v-1.554c0-.125.082-.231.203-.231h.989c.12 0 .236.108.236.234v1.551h1.555c.125 0 .231.083.231.204v.988Zm5.347.393a.862.862 0 0 1-.869-.855c0-.472.39-.856.869-.856.481 0 .87.384.87.856 0 .471-.389.855-.87.855Zm1.9 1.866a.86.86 0 0 1-.854-.869c0-.471.384-.87.854-.87.473 0 .87.384.87.87 0 .47-.384.87-.87.87Zm-1.9 1.866a.86.86 0 0 1-.869-.855c0-.471.389-.855.869-.855.481 0 .87.384.87.855 0 .471-.389.855-.87.855Z'/></g></svg>"
+              alt="SVG Icon">
+          </div>
+          <div class="plan-details pb-1">
+            <h3 class="plan-type text-marine-blue mb-1">Advanced</h3>
+            <p class="price pb-1">$120/yr</p>
+            <p class="text-marine-blue pb-1">2 months free</p>
+          </div>
+        </div>
+
+        <div class="plan-option disabled col-12-xs col-6-md col-3-lg br-sm pt-1 pb-1 pl-2 pr-4 ml-1 shadow-sm">
+          <div class="plan-icon pb-3">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><g fill='none' fill-rule='evenodd'><circle cx='20' cy='20' r='20' fill='%239F6DFD'/><path fill='%23FFF' fill-rule='nonzero' d='M22.5 11.667c2.905 0 5.6 1.19 7.573 3.167a10.605 10.605 0 0 1 0 14.848A10.605 10.605 0 0 1 22.5 32.5c-2.905 0-5.6-1.19-7.573-3.167a10.605 10.605 0 0 1 0-14.848 10.605 10.605 0 0 1 7.573-3.167Zm0 2c-2.238 0-4.4.896-5.971 2.467a8.402 8.402 0 0 0 0 11.944A8.402 8.402 0 0 0 22.5 31.333c2.238 0 4.4-.896 5.971-2.467a8.402 8.402 0 0 0 0-11.944A8.402 8.402 0 0 0 22.5 13.667Zm-.833 3.667c.735 0 1.333.598 1.333 1.333s-.598 1.333-1.333 1.333-1.333-.598-1.333-1.333.598-1.333 1.333-1.333Zm3 8.666H20v1h4.667v-1ZM25 20h-4.667v1H25v-1Z'/></g></svg>"
+              alt="SVG Icon">
+          </div>
+          <div class="plan-details pb-1">
+            <h3 class="plan-type text-marine-blue mb-1">Pro</h3>
+            <p class="price pb-1">$150/yr</p>
+            <p class="text-marine-blue pb-1">2 months free</p>
+          </div>
+        </div>
+        <!-- back button  -->
+        <!-- <button class="return-btn bg-marine-blue text-white p-1 br-sm border-none cursor-pointer" type="button">Go
+          Back</button> -->
+      </div>
+
+      <!-- Billing Toggle Start -->
+      <div class="billing-toggle display-f position-rel align-center bg-alabaster mt-2 ml-1  gap-1 mb-3">
+        <span class="billing-option text-marine-blue">Monthly</span>
+        <input type="checkbox" id="billing-toggle-checkbox" class="display-n" />
+        <label for="billing-toggle-checkbox" class="billing-label bg-marine-blue position-rel br-lg"></label>
+        <span class="billing-option billing-option-yearly">Yearly</span>
+      </div>
+
+      <p class="error-message plan-card text-red display-n ml-1" id="error-message">
+        Please select a plan before proceeding.
+      </p>
+      <!-- next button  -->
+      <button class="next-btn plan-btn mt-3 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+        type="button">Next Step</button>
+      <!-- return button  -->
+      <button class="return-btn ml-1 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+        type="button">Go Back</button>
+    </div>
+    <!-- Plan end  -->
+
+
+    <!-- add on section  -->
+    <div class="main-content display-n bg-white br-lg shadow" id="add-ons">
+      <h2 class="text-marine-blue mb-1 font-xl">Pick add-ons</h2>
+      <p class="text-coolgray mb-2">Add-ons help enhance your gaming experience.</p>
+      <div class="addons gap-2">
+        <div class="addon-item mb-1 display-f justify-space-between p-2 br-sm border-light-gray">
+          <div>
+            <input type="checkbox" id="online-service">
+            <label for="online-service" class="ml-1">Online service</label>
+            <small class="text-light-gray display-b">Access to multiplayer games</small>
+          </div>
+          <span class="text-purplish-blue">+$1/mo</span>
+        </div>
+        <div class="addon-item mb-1 display-f justify-space-between p-2 br-sm border-light-gray">
+          <div>
+            <input type="checkbox" id="larger-storage">
+            <label for="larger-storage" class="ml-1">Larger storage</label>
+            <small class="text-light-gray display-b">Extra 1TB of cloud save</small>
+          </div>
+          <span class="text-purplish-blue ml-1">+$2/mo</span>
+        </div>
+        <div class="addon-item display-f justify-space-between p-2 br-sm border-light-gray">
+          <div>
+            <input type="checkbox" id="customizable-profile">
+            <label for="customizable-profile" class="ml-1">Customizable Profile</label>
+            <small class="text-light-gray display-b">Custom theme on your profile</small>
+          </div>
+          <span class="text-purplish-blue ml-1">+$2/mo</span>
+        </div>
+
+          <!-- next button  -->
+      <!-- <button class="next-btn mt-3 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+      type="button">Next Step</button> -->
+
+        <!-- return button  -->
+        <!-- <button class="return-btn ml-1 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+        type="button">Go Back</button> -->
+      </div>
+
+      <!-- ErroR message  -->
+      <p id="error-message" class="error-message display-n text-red">Please select at least one add-on before
+        proceeding.</p>
+      <!-- next button  -->
+      <button class="next-btn mt-3 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+        type="button">Next Step</button>
+
+      <!-- return button  -->
+      <button class="return-btn bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+        type="button">Go Back</button>
+    </div>
+
+
+    <!-- summary section  -->
+    <div class="summary-content ml-5 display-n" id="summary">
+
+      <h2 class="text-marine-blue pb-1">Finishing up</h2>
+      <p class="pb-2">Double-check everything looks OK before confirming!.</p>
+
+      <!-- Personal Info Section -->
+      <div class="summary-box mb-1">
+        <h3 class="text-marine-blue mb-1">Summary</h3>
+        <div class="personal-info br-sm bg-pastel-blue p-2 text-marine-blue">
+          <p class="text-marine-blue pb-1"><strong>Name:</strong> <span id="summary-name">N/A</span></p>
+          <p class="text-marine-blue pb-1"><strong>Email:</strong> <span id="summary-email">N/A</span></p>
+          <p class="text-marine-blue"><strong>Phone:</strong> <span id="summary-phone">N/A</span></p>
+        </div>
+      </div>
+
+
+      <div class="summary-container ">
+        <div class="summary-box bg-alabaster p-2">
+          <div class="selected-plan">
+            <div class="plan-details pb-1">
+              <p class="plan-name text-marine-blue">Arcade (Monthly)</p>
+              <span class="plan-price text-marine-blue">$90/mo</span>
+              <p> <a href="#" class=" change-select-plan">Change</a></p>
+            </div>
+          </div>
+
+          <div class="add-ons">
+            <div class="add-on-item pb-1 ">
+              <span>Online service</span>
+              <span class="pl-6">+$1/mo</span>
+              <p> <a href="#" class="change-plan pb-1">Change</a></p>
+            </div>
+            <div class="add-on-item">
+              <span>Larger storage</span>
+              <span class="pl-6">+$2/mo</span>
+              <p> <a href="#" class="change-plan">Change</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-summary pt-1">
+          <span>Total (per month)</span>
+          <span class="total-price text-purplish-blue font-md pl-6">+$12/mo</span>
+        </div>
+
+        <!-- confirm button  -->
+        <button class="next-btn mt-3 bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+          type="button" id="confirm-btn">Confirm</button>
+
+        <!-- return button  -->
+        <button class="return-btn bg-marine-blue display-b text-white p-1 br-sm border-none cursor-pointer"
+          type="button">Go Back</button>
+      </div>
+    </div>
+
+    <!-- Thank You Card -->
+    <div class=" thank-you-card display-n p-3 pl-4 ml-5 br-lg bg-alabaster text-marine-blue" id="thank-you-card">
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+          <g fill="none">
+            <circle cx="40" cy="40" r="40" fill="#F9818E" />
+            <path fill="#E96170"
+              d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z" />
+            <path fill="#FFF"
+              d="M40.003 18.333a21.58 21.58 0 0 1 15.31 6.351c8.471 8.471 8.471 22.158 0 30.63-8.47 8.47-22.156 8.47-30.627 0-8.47-8.472-8.47-22.159 0-30.63a21.594 21.594 0 0 1 15.317-6.35Zm9.865 15c-.316.028-.622.15-.872.344l-12.168 9.13-5.641-5.642c-1.224-1.275-3.63 1.132-2.356 2.356l6.663 6.663c.56.56 1.539.63 2.173.156l13.326-9.995c1.122-.816.43-2.993-.956-3.013a1.666 1.666 0 0 0-.17 0Z" />
+          </g>
+        </svg>
+      </div>
+        <h1 class="writing-heading mb-1 font-lg text-marine-blue">Thank you!</h1>
+        <p class="writing-paragraph font-md text-marine-blue">Thanks for confirming your subscription! We hope you have
+          fun using our platform. If you ever
+          need support, please feel free to email us at support <a href="#">@loremgaming.com</a>.</p>
+    </div>
+</body>
+
+</html>

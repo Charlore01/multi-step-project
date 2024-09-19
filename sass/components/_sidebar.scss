@@ -1,0 +1,135 @@
+@use 'sass:math';
+@import '../breakpoints';
+
+.side-bar {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='274' height='568' fill='none' viewBox='0 0 274 568'%3E%3Crect width='274' height='568' fill='%23483EFF' rx='10'/%3E%3Cmask id='a' width='274' height='568' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='274' height='568' fill='%23fff' rx='10'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath fill='%236259FF' fill-rule='evenodd' d='M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z' clip-rule='evenodd'/%3E%3Cpath fill='%23F9818E' fill-rule='evenodd' d='M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='bevel' stroke-width='5' d='m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798'/%3E%3Cpath fill='%23FFAF7E' d='M.305 546.891c37.003 0 67-29.997 67-67s-29.997-67-67-67-67 29.997-67 67 29.997 67 67 67Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  // width: 150px;
+  max-width: 10%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: math.div($base-padding, 2); // Add padding for spacing
+  border-radius: math.div($base-border-radius, 2.5);
+  display: flex;
+  flex-direction: column; // Arrange items in a column
+  align-items: start; // Align items to the left
+  height: auto;
+  min-height: 410px;
+  position: fixed; // Fix the sidebar to the left side
+  left: 19.3%;
+  top: 11%;
+  z-index: 10; // Ensure the sidebar is above other elements
+  
+
+
+
+  // Make it responsive
+  @include respond-to(small) {
+    display: flex;
+    max-width: 85%;
+    width: 100%; // Full width for small screens
+    left: 0;
+    top: -60%;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  @include respond-to(large) {
+    // width: 100%; // Even larger for desktops
+  }
+
+  // Hover effect
+  &:hover {
+    transform: scale(1.05); // Slight scaling up effect
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Soft shadow for depth
+    border-radius: 15px; // Rounding the corners more on hover
+  }
+
+  // // Animated border effect
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   inset: 0;
+  //   border: 2px solid transparent;
+  //   // border-image: linear-gradient(45deg, $purplish-blue, $marine-blue, $marine-blue, $white);
+  //   border-image-slice: 1;
+  //   opacity: 0;
+  //   transition: all 0.6s ease; // Smooth transition for border effect
+  // }
+
+  // &:hover::before {
+  //   opacity: 1; // Makes the animated border visible on hover
+  // }
+
+  // // Glow animation on hover
+  // &:hover::after {
+  //   content: '';
+  //   position: absolute;
+  //   inset: 0;
+  //   background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  //   opacity: 0;
+  //   z-index: -1;
+  //   animation: glow 1.5s infinite alternate; // Infinite alternating glow animation
+  // }
+
+  // // Keyframes for glowing effect
+  // @keyframes glow {
+  //   0% {
+  //     box-shadow: 2px 2px 10px $light-blue;
+  //   }
+
+  //   100% {
+  //     box-shadow: 2px 2px 30px $marine-blue;
+  //   }
+
+  // }
+
+  .step-container {
+    @include respond-to(small) {
+      position: absolute;
+      top: 73%;
+      left: 4%;
+      display: inline-flex;
+    }
+
+    @include respond-to(medium) {
+     margin-left: -100px;
+    }
+  
+    .step {
+      justify-content: flex-start;
+  
+      .step-number {
+        border: 0.5px solid $white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .step-text {
+        line-height: 17px;
+
+        @include respond-to(small) {
+          display: none;
+        }
+      }
+    }
+  }
+  
+
+  
+}
+
+// &.active .step-number {
+//   background-color: $light-blue;
+//   color: $marine-blue;
+// }
+
+.step.active .step-number {
+  background-color: $light-blue;
+  /* Change this to your desired active color */
+  color: white;
+}

@@ -1,0 +1,171 @@
+// import google font
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import './breakpoints';
+
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: Ubuntu;
+  // background-color: red;
+  justify-content: center;
+  align-items: center;
+  width: $base-width;
+  height: $base-width;
+  // display: flex;
+}
+
+// Mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration ease-in-out;
+}
+
+.container {
+  height: 400px;
+  width: 50%;
+  margin: 50px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.363);
+  @include transition(opacity, 1s);
+  overflow: hidden;
+
+
+
+  @include respond-to(small) {
+    overflow-y: scroll;
+  }
+}
+
+button {
+  width: 120px;
+  margin-left: 70%;
+  // padding: 10px 0px;
+  border: 2px solid $marine-blue; // Initial border color
+  background: linear-gradient(135deg, $marine-blue, $marine-blue); // Starting gradient background
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 30px; // Rounded button corners
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; // Prevents hover effect overflow
+  transition: all 0.4s ease-in-out; // Smooth transition for hover effects
+
+  // Hover effect
+  &:hover {
+    color: #000; // Text color change on hover
+    background: $marine-blue; // Background changes to marine-blue on hover
+    box-shadow: 0 0 20px $marine-blue, 0 0 40px $light-blue, 0 0 60px $marine-blue; // Glowing shadow effect
+  }
+
+  // Animated background gradient effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 300%;
+    height: 200%;
+    color: #fff;
+    background: linear-gradient(45deg, $pastel-blue, $light-blue, $marine-blue, $white);
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+    transform: rotate(45deg); // Angle of the gradient background
+  }
+
+  // Animated gradient flow on hover
+  &:hover::before {
+    left: 0; // Moves the gradient effect to the center
+    top: 0; // Moves the gradient effect to the center
+    width: 300%; // Expands the gradient effect
+    height: 300%; // Expands the gradient effect
+    transform: rotate(0deg); // Removes the initial rotation
+  }
+
+  // Text and border effects on hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0; // Makes sure the inset spans all corners
+    border: 2px solid $marine-blue; // Border color change on hover
+    transform: scale(1.1); // Slight zoom of border
+    opacity: 0; // Starts hidden
+    transition: all 0.4s ease-in-out; // Smooth transition for hover effects
+  }
+
+  // Glowing border effect on hover
+  &:hover::after {
+    transform: scale(1); // Scales border back to normal size
+    opacity: 1; // Makes border fully visible
+  }
+
+  z-index: 1; // Ensures text stays above pseudo-elements
+}
+
+.select-plan-container {
+  .return-btn {
+    margin-top: -47px;
+
+
+    @include respond-to(small) {
+      margin-top: -42px; // Adjust margin for smaller screens
+      margin-left: -95px;
+      flex: 1; // Ensure buttons stack on smaller screens
+    }
+
+    @include respond-to(medium) {
+      margin-top: 15px;
+      flex: 0.5; // Adjust sizing for medium screens
+    }
+  }
+
+  .next-btn {
+    position: relative;
+    margin-left: 430px;
+    margin-top: 20px;
+
+
+    @include respond-to(small) {
+      margin-top: 10px; // Reduce margin for smaller screens
+      flex: 1; // Ensure buttons stack on smaller screens
+      // justify-content: space-around;
+      margin-left: 85px; // Avoid fixed margin on small screens
+      // flex-direction: column; // Stack buttons on smaller screens
+      // align-items: center; // Center-align buttons for mobile
+    }
+
+    @include respond-to(medium) {
+      margin-left: 20px; // Moderate margin for medium screens
+      flex: 0.5; // Adjust sizing for medium screens
+      flex-direction: row; // Keep buttons in a row on medium screens
+      justify-content: space-between; // Distribute space evenly
+    }
+  }
+}
+
+
+@mixin btn {
+  margin-left: -65px;
+  margin-top: -50px;
+}
+
+
+.main-content {
+  .return-btn {
+    @include btn
+  }
+}
+
+.summary-container {
+  .return-btn {
+    @include btn
+  }
+
+  .next-btn {
+    margin-top: 18px;
+  }
+}

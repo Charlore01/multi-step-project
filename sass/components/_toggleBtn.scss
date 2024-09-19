@@ -1,0 +1,61 @@
+.billing-toggle {
+  width: 150%; /* Responsive width */
+  max-width: 300px; /* Maximum width limit */
+  padding: 10px 20px;
+  justify-content: space-between; /* Ensure "Monthly" and "Yearly" stay on opposite ends */
+  background-color: $alabaster;
+  border-radius: 30px;
+  position: relative; /* Base positioning for larger screens */
+  margin: 20px auto; /* Center horizontally by default */
+
+  @include respond-to(small) {
+    position: relative; /* Position absolutely on small screens */
+    top: 0%; /* Adjust the distance from the top */
+    left: -40%; /* Align the toggle to the left side */
+    margin-left: 0; /* Remove margin-left */
+    max-width: 200%; /* Ensure it fits the smaller screen */
+    z-index: 1;
+  }
+
+  
+  /* Toggle Container */
+  .billing-label {
+    width: 50px; /* Consistent width for the toggle */
+    height: 24px;
+    background-color: $marine-blue; /* Default background color */
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    // @include respond-to(small){
+    //   width: 45px;
+    //   height: 20px;
+    //   margin-left: -60%;
+    //  }
+
+    /* Toggle Circle */
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 3px; /* Position the toggle circle */
+      transform: translateY(-50%);
+      transition: left 0.3s ease; /* Smooth transition for toggle movement */
+    }
+  }
+
+  /* When toggled (checked) */
+  #billing-toggle-checkbox:checked + .billing-label {
+    background-color: $purplish-blue; /* Active color when toggled */
+
+    &::before {
+      left: calc(100% - 23px); /* Move the toggle circle to the right */
+    }
+  }
+}
+

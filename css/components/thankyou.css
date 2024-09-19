@@ -1,0 +1,41 @@
+.thank-you-card {
+  width: 290px;
+  transition: transform 500ms ease-in-out;
+  /* Mind-blowing hover effect */
+  /* Smooth transition for hover */
+  /* Change the fill colors on hover */
+}
+.thank-you-card:hover {
+  box-shadow: 2px 2px 8px;
+}
+.thank-you-card .svg-container {
+  margin-left: 100px;
+  padding-bottom: 8px;
+  display: inline-block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  cursor: pointer;
+}
+.thank-you-card .svg-container:hover {
+  transform: scale(1.5) rotate(360deg); /* Scale and rotate */
+  filter: drop-shadow(0 0 15px #f9818e) brightness(1.5); /* Glowing shadow and brightness */
+}
+.thank-you-card svg {
+  transition: fill 0.3s ease; /* Smooth color change on hover */
+}
+.thank-you-card .svg-container:hover svg circle {
+  fill: #ff5733; /* Change the circle to a bright orange */
+}
+.thank-you-card .svg-container:hover svg path {
+  fill: #ffbd33; /* Change the paths to a bright yellow */
+}
+.thank-you-card h1 {
+  text-align: center;
+}
+
+
+
+
+
+
+
+

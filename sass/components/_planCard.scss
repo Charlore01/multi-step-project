@@ -1,0 +1,92 @@
+.select-plan-container {
+  margin-left: 40.5%;
+  margin-top: -40px;
+
+  @include respond-to(small) {
+    margin-left: 0; // Adjust to fit smaller screens
+    margin-top: 0; // Remove top margin for better alignment on smaller screens
+    max-width: 100%;
+  }
+
+
+
+  .plan-options {
+    // display: flex;
+    // flex-wrap: wrap; // Ensure items wrap on smaller screens
+
+    @include respond-to(small) {
+      flex-direction: column; // Stack items vertically
+      gap: 1rem; // Add space between stacked items
+    }
+
+
+  }
+
+  .plan-option {
+    background-color: $alabaster;
+    width: 100%; // Default width to full for stacking
+
+
+
+    @include respond-to(small) {
+      text-align: center;
+      margin: 1px auto;
+      margin-left: -18%;
+      padding: 30px 20px; // Adjust padding for smaller screens
+      width: 100%; // Full width on small screens
+      margin-bottom: 1rem; // Add space between stacked options
+    }
+
+
+    &:hover {
+      border: 2px solid $purplish-blue;
+      transform: translateY(-25px);
+      cursor: pointer;
+      box-shadow: 2px 2px 16px $purplish-blue;
+    }
+
+    .plan-details {
+      white-space: nowrap;
+      /* Prevents text wrapping */
+      overflow: hidden;
+      /* Hides any overflow text */
+      text-align: left;
+      /* Aligns text to the left */
+      display: flex;
+      /* Uses Flexbox for alignment */
+      flex-direction: column;
+      /* Aligns items in a column */
+      justify-content: flex-start;
+      /* Aligns items to the start */
+
+      @include respond-to(small) {
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3,
+      p {
+        margin: 0;
+        /* Removes any default margin */
+      }
+    }
+  }
+}
+
+.selected-card {
+  background-color: $pastel-blue !important;
+  /* Change to the desired darker color */
+  color: $white;
+  border: 3px solid $purplish-blue;
+  /* Optional: Add a border to make it more prominent */
+
+  @include respond-to(small) {
+    color: $marine-blue;
+  }
+}
+
+.plan-card {
+  padding-top: 40px;
+  display: none;
+  // font-weight: bold;
+}

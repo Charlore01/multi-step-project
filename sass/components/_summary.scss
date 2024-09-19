@@ -1,0 +1,34 @@
+.summary-content {
+    margin-top: -65px;
+    padding-left: 150px;
+    display: flex;
+    justify-content: space-between; // Ensure proper alignment
+    flex-wrap: wrap; // Wrap on smaller screens
+
+    @include respond-to(small) {
+        padding-left: 0px;
+        position: relative;
+        left: -45%;
+    }
+
+    .summary-box {
+        //         display: flex;
+        //         flex-wrap: wrap;
+
+        .change-plan {
+            &:hover {
+                color: $purplish-blue;
+            }
+        }
+
+        .plan-price {
+            // padding-left: 250px;
+            margin-top: -20px;
+            font-weight: bold;
+        }
+
+    }
+
+
+
+}

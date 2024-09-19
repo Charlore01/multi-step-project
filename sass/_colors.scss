@@ -1,0 +1,26 @@
+// color pallete
+$colors: (
+'marine-blue': $marine-blue,
+'purplish-blue': $purplish-blue,
+'pastel-blue': $pastel-blue,
+'lightblue': $light-blue,
+'strawberry-red': $strawberry-red,
+'coolgray': $cool-gray,
+'lightgray': $light-gray,
+'magnolia': $magnolia,
+'alabaster': $alabaster,
+'white': $white,
+'black': #000,
+'red': red,
+) !default;
+
+// to generate color classes 
+@each $key, $val in $colors {
+    .text-#{$key} {
+        color: $val;
+    }
+
+    .bg-#{$key} {
+        background-color: $val;
+    }
+}
